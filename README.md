@@ -12,7 +12,7 @@ Explore books and topics related to homeschooling using the Open Library API.
 This app helps users browse books and topics related to homeschooling. It fetches data from Open Library and displays it in a user-friendly format.
 
 ## 🌐 Live Site
-[https://Tuscaney.github.io/homeschooling-explorer](https://Tuscaney.github.io/homeschooling-explorer)  
+[https://tuscaney.github.io/homeschooling-explorer](https://tuscaney.github.io/homeschooling-explorer)  
 
 
 ## 📷 Postman Screenshot
