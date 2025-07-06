@@ -19,4 +19,4 @@ This app helps users browse books and topics related to homeschooling. It fetche
 ![Postman Collection Screenshot](postman-screenshot.png)
 
 ## 📋 GitHub Project Board
-[GitHub Project Link](https://github.com/Tuscaney/homeschooling-explorer/projects/1)
+[GitHub Project Link](https://github.com/users/Tuscaney/projects/3)
