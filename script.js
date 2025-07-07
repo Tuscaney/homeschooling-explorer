@@ -54,3 +54,7 @@ function fetchBooks() {
       bookContainer.innerHTML = '<p class="text-red-500">Failed to load data. Please try again later.</p>';
     });
 }
+
+// 1️⃣6️⃣ Set up the event listener for the button
+// When clicked, it will run the fetchBooks() function
+searchButton.addEventListener('click', fetchBooks);
