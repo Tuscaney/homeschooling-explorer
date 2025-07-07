@@ -43,3 +43,14 @@ function fetchBooks() {
         // 1️⃣3️⃣ Append the title and author to the card
         card.appendChild(title);
         card.appendChild(author);
+
+        // 1️⃣4️⃣ Add the card to the main book container
+        bookContainer.appendChild(card);
+      });
+    })
+    .catch(error => {
+      // 1️⃣5️⃣ Handle any errors (e.g., network issues)
+      console.error('Error fetching books:', error);
+      bookContainer.innerHTML = '<p class="text-red-500">Failed to load data. Please try again later.</p>';
+    });
+}
