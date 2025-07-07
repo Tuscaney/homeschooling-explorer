@@ -35,48 +35,54 @@ function fetchAllBooks() {
 
 // 9️⃣ Function to display the next book in the list
 function showNextBook() {
-  // 10️⃣ Clear out any previous book shown in the container
+  // 1️⃣0️⃣ Clear out any previous book shown in the container
   bookContainer.innerHTML = '';
 
-  // 11️⃣ Get the book from the array using the current index
+  // 1️⃣1️⃣ Get the current book from the array using the index
   const book = books[currentIndex];
 
-  // 12️⃣ Create a new card for the book
+  // 1️⃣2️⃣ Create a new card element to hold book info
   const card = document.createElement('div');
-  card.className = 'bg-white rounded-lg shadow p-4 mb-4 text-center';
+  card.className = 'bg-white rounded-lg shadow-md p-4 mb-6 max-w-md mx-auto transition duration-300 hover:shadow-lg';
 
-  // 13️⃣ If the book has a cover image, create and add an <img> element
+  // 1️⃣3️⃣ If the book has a cover image, create an <img> element
   if (book.cover_id) {
     const image = document.createElement('img');
-    image.src = `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`;  // Construct the cover image URL
+    image.src = `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`; // M = Medium size
     image.alt = `Cover of ${book.title}`;
     image.className = 'w-full h-64 object-cover rounded mb-4';
     card.appendChild(image);
   }
 
-  // 14️⃣ Create and add the book title
+  // 1️⃣4️⃣ Add the book title as a heading
   const title = document.createElement('h2');
   title.textContent = book.title;
-  title.className = 'text-xl font-bold mb-2';
+  title.className = 'text-xl font-semibold text-orange-700 mb-2';
   card.appendChild(title);
 
-  // 15️⃣ Get and display the author’s name if available
+  // 1️⃣5️⃣ Display the author’s name if available
   const author = document.createElement('p');
-  author.textContent = book.authors?.[0]?.name || 'Unknown author';   // Use optional chaining to avoid errors
-  author.className = 'text-gray-600';
+  author.textContent = book.authors?.[0]?.name || 'Unknown author';  // Optional chaining prevents errors
+  author.className = 'text-gray-600 italic mb-4';
   card.appendChild(author);
 
-  // 16️⃣ Add the complete book card to the page
+  // 1️⃣6️⃣ Add a “View on Open Library” button (styled as a link)
+  const infoLink = document.createElement('a');
+  infoLink.href = `https://openlibrary.org${book.key}`;   // Use the book’s key to build the link
+  infoLink.target = '_blank';                             // Opens in new tab
+  infoLink.textContent = 'View on Open Library';
+  infoLink.className = 'inline-block bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700 transition';
+  card.appendChild(infoLink);
+
+  // 1️⃣7️⃣ Add the completed card to the page
   bookContainer.appendChild(card);
 
-  // 17️⃣ Move to the next book for the next button click
-  currentIndex = (currentIndex + 1) % books.length;  // Loop back to start when we reach the end
+  // 1️⃣8️⃣ Move to the next book index for the next button click
+  currentIndex = (currentIndex + 1) % books.length;  // Loops back to the start after the last book
 }
 
-// 18️⃣ Set up the button click event listener
-// When the button is clicked, it will show the next book
-searchButton.addEventListener('click', showNextBook);
+// 1️⃣9️⃣ Add an event listener to the search button
+searchButton.addEventListener('click', showNextBook); // On click, show the next book
 
-// 19️⃣ Call the fetch function when the page loads
-// This ensures the books are ready before clicking the button
+// 2️⃣0️⃣ Fetch books once the page is loaded so we’re ready to display them
 fetchAllBooks();
