@@ -16,3 +16,10 @@ function fetchBooks() {
       // 6️⃣ Check if the request was successful (status 200 OK)
       if (!response.ok) {
         throw new Error('Network response was not ok');
+        }
+      // 7️⃣ Parse the response into JSON
+      return response.json();
+    })
+    .then(data => {
+      // 8️⃣ Extract the array of books from the response object
+      const books = data.works;
