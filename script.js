@@ -29,3 +29,8 @@ function fetchBooks() {
         // 1️⃣0️⃣ Create a card element for the book
         const card = document.createElement('div');
         card.className = 'bg-white rounded-lg shadow p-4 mb-4';
+
+        // 1️⃣1️⃣ Create and add the book title
+        const title = document.createElement('h2');
+        title.textContent = book.title;
+        title.className = 'text-xl font-bold mb-2';
