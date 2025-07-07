@@ -53,3 +53,15 @@ function showNextBook() {
     image.className = 'w-full h-64 object-cover rounded mb-4';
     card.appendChild(image);
   }
+
+  // 14️⃣ Create and add the book title
+  const title = document.createElement('h2');
+  title.textContent = book.title;
+  title.className = 'text-xl font-bold mb-2';
+  card.appendChild(title);
+
+  // 15️⃣ Get and display the author’s name if available
+  const author = document.createElement('p');
+  author.textContent = book.authors?.[0]?.name || 'Unknown author';   // Use optional chaining to avoid errors
+  author.className = 'text-gray-600';
+  card.appendChild(author);
