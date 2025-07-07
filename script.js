@@ -6,3 +6,6 @@ const bookContainer = document.getElementById('bookResults');  // Section where 
 function fetchBooks() {
   // 3️⃣ Clear any previous results before loading new ones
   bookContainer.innerHTML = '';
+
+  // 4️⃣ Define the API URL for homeschooling subject
+  const url = 'https://openlibrary.org/subjects/home_schooling.json?limit=10';
