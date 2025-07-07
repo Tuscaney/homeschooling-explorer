@@ -9,3 +9,10 @@ function fetchBooks() {
 
   // 4️⃣ Define the API URL for homeschooling subject
   const url = 'https://openlibrary.org/subjects/home_schooling.json?limit=10';
+
+  // 5️⃣ Make the API request
+  fetch(url)
+    .then(response => {
+      // 6️⃣ Check if the request was successful (status 200 OK)
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
