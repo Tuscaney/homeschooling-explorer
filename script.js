@@ -32,3 +32,24 @@ function fetchAllBooks() {
       bookContainer.innerHTML = '<p class="text-red-500">Failed to load data. Please try again later.</p>';
     });
 }
+
+// 9️⃣ Function to display the next book in the list
+function showNextBook() {
+  // 10️⃣ Clear out any previous book shown in the container
+  bookContainer.innerHTML = '';
+
+  // 11️⃣ Get the book from the array using the current index
+  const book = books[currentIndex];
+
+  // 12️⃣ Create a new card for the book
+  const card = document.createElement('div');
+  card.className = 'bg-white rounded-lg shadow p-4 mb-4 text-center';
+
+  // 13️⃣ If the book has a cover image, create and add an <img> element
+  if (book.cover_id) {
+    const image = document.createElement('img');
+    image.src = `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`;  // Construct the cover image URL
+    image.alt = `Cover of ${book.title}`;
+    image.className = 'w-full h-64 object-cover rounded mb-4';
+    card.appendChild(image);
+  }
