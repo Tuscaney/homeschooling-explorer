@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homeschooling Explorer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homeschooling Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <header class="bg-orange-600 text-white p-4 text-center">
-    <h1 class="text-2xl font-bold">Homeschooling Explorer</h1>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-orange-600 text-white p-4 text-center">
+    <h1 class="text-4xl font-bold">Homeschooling Explorer</h1>
     <p>A simple project using the Open Library API</p>
   </header>
 
-  <main class="p-4">
+  <!-- Main content centered -->
+  <main class="flex-1 flex flex-col items-center justify-center p-6">
+
     <!-- About Section -->
-    <section class="mb-4">
-      <h2 class="text-xl font-semibold mb-2 text-center">About This Project</h2>
-      <p class="text-center">This site fetches and displays homeschooling-related content from the Open Library API. More features coming soon!</p>
+    <section class="mb-6 text-center max-w-xl">
+      <h2 class="text-xl font-semibold mb-2">About This Project</h2>
+      <p>This site fetches and displays homeschooling-related content from the Open Library API. More features coming soon!</p>
     </section>
 
-<!-- Button to Trigger API Call -->
-    <section class="mb-6">
-      <button id="searchBtn" class="bg-orange-600 hover:bg-orange-800 text-white font-bold py-2 px-4 rounded">
+    <!-- Button to Trigger API Call -->
+    <section class="mb-6 text-center">
+      <button id="searchBtn" class="bg-orange-600 hover:bg-orange-800 text-white font-bold py-2 px-6 rounded shadow">
         Show Homeschooling Books
       </button>
     </section>
 
-<!-- Dynamic Results Section -->
-    <section>
-      <h2 class="text-xl font-semibold mb-2">Books and Resources</h2>
-      <div id="bookResults" class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        <!-- Fetched book cards will appear here -->
+    <!-- Results Section -->
+    <section class="w-full">
+      <h2 class="text-xl font-semibold mb-4 text-center">Books and Resources</h2>
+      <div id="bookResults" class="flex justify-center items-center">
+        <!-- Fetched book card will appear here, centered -->
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="text-center p-4 text-sm text-gray-500">
     &copy; 2025 Tuscaney Carraway
   </footer>
 
-<script src="script.js"></script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 </html>

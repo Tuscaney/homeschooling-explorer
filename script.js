@@ -43,7 +43,7 @@ function showNextBook() {
 
   // 1️⃣2️⃣ Create a new card element to hold book info
   const card = document.createElement('div');
-  card.className = 'bg-white rounded-lg shadow-md p-4 mb-6 max-w-md mx-auto transition duration-300 hover:shadow-lg';
+  card.className = 'bg-white rounded-lg shadow-md p-4 mb-6 max-w-md mx-auto h-[34rem] flex flex-col justify-start overflow-hidden transition duration-300 hover:shadow-lg';
 
   // 1️⃣3️⃣ If the book has a cover image, create an <img> element
   if (book.cover_id) {
