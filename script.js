@@ -23,3 +23,9 @@ function fetchBooks() {
     .then(data => {
       // 8️⃣ Extract the array of books from the response object
       const books = data.works;
+
+      // 9️⃣ Loop over each book object in the array
+      books.forEach(book => {
+        // 1️⃣0️⃣ Create a card element for the book
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-lg shadow p-4 mb-4';
