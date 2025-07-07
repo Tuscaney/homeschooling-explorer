@@ -2,7 +2,7 @@
 const searchButton = document.getElementById('searchBtn');  // Button to trigger the API call
 const bookContainer = document.getElementById('bookResults');  // Section where books will be displayed
 
-/ 2️⃣ Define a function that fetches homeschooling books from the API
+// 2️⃣ Define a function that fetches homeschooling books from the API
 function fetchBooks() {
   // 3️⃣ Clear any previous results before loading new ones
   bookContainer.innerHTML = '';
@@ -16,7 +16,7 @@ function fetchBooks() {
       // 6️⃣ Check if the request was successful (status 200 OK)
       if (!response.ok) {
         throw new Error('Network response was not ok');
-        }
+      }
       // 7️⃣ Parse the response into JSON
       return response.json();
     })
@@ -26,7 +26,7 @@ function fetchBooks() {
 
       // 9️⃣ Loop over each book object in the array
       books.forEach(book => {
-        // 1️⃣0️⃣ Create a card element for the book
+        // 🔟 Create a card element for the book
         const card = document.createElement('div');
         card.className = 'bg-white rounded-lg shadow p-4 mb-4';
 
