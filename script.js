@@ -65,3 +65,18 @@ function showNextBook() {
   author.textContent = book.authors?.[0]?.name || 'Unknown author';   // Use optional chaining to avoid errors
   author.className = 'text-gray-600';
   card.appendChild(author);
+
+  // 16️⃣ Add the complete book card to the page
+  bookContainer.appendChild(card);
+
+  // 17️⃣ Move to the next book for the next button click
+  currentIndex = (currentIndex + 1) % books.length;  // Loop back to start when we reach the end
+}
+
+// 18️⃣ Set up the button click event listener
+// When the button is clicked, it will show the next book
+searchButton.addEventListener('click', showNextBook);
+
+// 19️⃣ Call the fetch function when the page loads
+// This ensures the books are ready before clicking the button
+fetchAllBooks();
