@@ -40,21 +40,29 @@ function fetchBooks() {
         author.textContent = book.authors?.[0]?.name || 'Unknown author';
         author.className = 'text-gray-600';
 
-        // 1️⃣3️⃣ Append the title and author to the card
+        // 1️⃣3️⃣ If a cover ID is available, create an image element
+        if (book.cover_id) {
+          const image = document.createElement('img');
+          image.src = `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`;
+          image.alt = `Cover of ${book.title}`;
+          image.className = 'w-full h-64 object-cover rounded mb-2';
+          card.appendChild(image);
+        }
+
+        // 1️⃣4️⃣ Append title and author to the card
         card.appendChild(title);
         card.appendChild(author);
 
-        // 1️⃣4️⃣ Add the card to the main book container
+        // 1️⃣5️⃣ Add the card to the main book container
         bookContainer.appendChild(card);
       });
     })
     .catch(error => {
-      // 1️⃣5️⃣ Handle any errors (e.g., network issues)
+      // 1️⃣6️⃣ Handle any errors (e.g., network issues)
       console.error('Error fetching books:', error);
       bookContainer.innerHTML = '<p class="text-red-500">Failed to load data. Please try again later.</p>';
     });
 }
 
-// 1️⃣6️⃣ Set up the event listener for the button
-// When clicked, it will run the fetchBooks() function
+// 1️⃣7️⃣ Set up the event listener for the button
 searchButton.addEventListener('click', fetchBooks);
