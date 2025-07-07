@@ -34,3 +34,12 @@ function fetchBooks() {
         const title = document.createElement('h2');
         title.textContent = book.title;
         title.className = 'text-xl font-bold mb-2';
+
+        // 1️⃣2️⃣ Get the author's name if available
+        const author = document.createElement('p');
+        author.textContent = book.authors?.[0]?.name || 'Unknown author';
+        author.className = 'text-gray-600';
+
+        // 1️⃣3️⃣ Append the title and author to the card
+        card.appendChild(title);
+        card.appendChild(author);
