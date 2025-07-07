@@ -50,7 +50,7 @@ function showNextBook() {
     const image = document.createElement('img');
     image.src = `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`; // M = Medium size
     image.alt = `Cover of ${book.title}`;
-    image.className = 'w-full h-64 object-cover rounded mb-4';
+    image.className = 'w-full h-64 object-cover object-center rounded mb-4';
     card.appendChild(image);
   }
 
